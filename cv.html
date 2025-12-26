@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - KHAOULA EL AIDI | Data Scientist & Cloud Computing</title>
+    <style>
+        @page {
+            margin: 0.3in 0.4in; /* marges d'impression réduites : moins en haut/bas, normal sur les côtés */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Verdana rend la lettre l plus lisible et distincte à l'impression */
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+            font-size: 11px; /* taille uniforme pour tout le texte */
+            line-height: 1.35;
+            color: #222;
+            background-color: #f5f5f7;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto; /* commence plus haut sur la page */
+            background-color: #fff;
+            padding: 8px 18px 10px; /* marges internes réduites au maximum, surtout en haut */
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 2px;
+            margin-bottom: 2px;
+        }
+
+        .header-main {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 24px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            color: #222;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .title {
+            font-size: 10px;
+            font-weight: 600;
+            color: #5b2ea6;
+            margin-top: 1px;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .contact {
+            margin-top: 2px;
+            font-size: 8.5px;
+            color: #444;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 10px;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .contact span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .contact a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .icon-item::before {
+            display: inline-block;
+            width: 10px;
+            text-align: center;
+            margin-right: 2px;
+            color: #5b2ea6;
+            font-size: 9px;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .icon-location::before {
+            content: "📍";
+        }
+
+        .icon-phone::before {
+            content: "📞";
+        }
+
+        .icon-email::before {
+            content: "✉️";
+        }
+
+        .icon-linkedin::before {
+            content: "in";
+            font-weight: 700;
+            font-size: 9px;
+            border-radius: 3px;
+            border: 1px solid #5b2ea6;
+            padding: 0 2px;
+            margin-right: 4px;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .photo-placeholder {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 2px solid #5b2ea6; /* bordure ronde autour de la photo */
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* garde l'image bien dans le cercle */
+            padding: 0;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 68% 29%; /* plus d'espace pour expérience/projets, moins pour compétences */
+            column-gap: 3%;
+        }
+
+        .section {
+            margin-bottom: 10px; /* espace vertical entre les sections */
+        }
+
+        .section-title {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #5b2ea6;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid #5b2ea6;
+            margin-bottom: 5px;
+            margin-top: 2px;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .summary-section {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .summary {
+            font-size: 9.5px;
+            text-align: justify;
+            line-height: 1.3;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .position {
+            margin-bottom: 8px;
+        }
+
+        .position-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .position-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #222;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .position-company {
+            font-size: 10px;
+            font-weight: 600;
+            color: #444;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .position-meta {
+            font-size: 8px;
+            color: #666;
+            text-align: right;
+            white-space: nowrap;
+            margin-left: 8px;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .subheading {
+            font-size: 8.5px;
+            font-weight: 600;
+            margin: 2px 0 1px;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 16px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        li {
+            margin-bottom: 0;
+            font-size: 9px;
+            text-align: justify;
+            line-height: 1.3;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .edu-item {
+            margin-bottom: 8px;
+        }
+
+        .edu-title {
+            font-size: 9.5px;
+            font-weight: 600;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .edu-meta {
+            font-size: 8px;
+            color: #555;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .tag-block {
+            font-size: 8.5px;
+            line-height: 1.6; /* espace vertical réduit entre les tags */
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .tag {
+            display: inline-block;
+            border-radius: 10px;
+            padding: 1px 6px;
+            margin: 0 3px 4px 0;
+            background-color: #f4f0ff;
+            color: #333;
+            border: 1px solid #ded2ff;
+            font-size: 8.5px;
+            white-space: nowrap;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .right-section-text {
+            font-size: 10px;
+            margin-bottom: 4px;
+            margin-top: 2px;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .affiliation {
+            font-size: 9px;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .languages-table {
+            margin-top: 4px;
+        }
+
+        .language-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            padding: 2px 0 3px;
+            border-bottom: 1px dashed #cccccc;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .language-row:last-child {
+            border-bottom: none;
+        }
+
+        .language-name {
+            font-weight: 500;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        .language-level {
+            font-weight: 500;
+            font-family: Verdana, "Segoe UI", Tahoma, sans-serif;
+        }
+
+        @media print {
+        body {
+                background: #fff;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .photo-placeholder {
+                border-color: #d0c7ff;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="header-main">
+            <div class="name">KHAOULA EL AIDI</div>
+            <div class="title">Ingénieure en Data Science &amp; Cloud Computing | Data Scientist</div>
+            <div class="contact">
+                <span class="icon-item icon-location">Rabat, Maroc</span>
+                <span class="icon-item icon-phone">+212 705 11 60 03</span>
+                <span class="icon-item icon-email">khaoulaelaidi4@gmail.com</span>
+                <span class="icon-item icon-linkedin">
+                    <a href="https://www.linkedin.com/in/khaoula-el-aidi-a22035295" target="_blank">
+                        linkedin.com/in/khaoula-el-aidi-a22035295
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="photo-placeholder">
+            <img src="img3.png" alt="Photo de Khaoula El Aidi"
+                 style="width:100%; height:100%; object-fit: cover; border-radius: 50%; border:none;">
+    </div>
+</header>
+
+    <!-- Résumé sur toute la largeur -->
+    <section class="section summary-section">
+    <h2 class="section-title">Résumé professionnel</h2>
+    <p class="summary">
+        Ingénieure en Data Science, spécialisée dans l’analyse et le traitement de données massives, avec des compétences en intelligence artificielle, machine learning, deep learning, statistiques et visualisation de données. Expérimentée dans le cycle complet de la data science, de la collecte à la modélisation prédictive, capable de transformer des données complexes en insights exploitables et en solutions intelligentes à fort impact métier.
+
+    </p>
+</section>
+
+
+    <div class="layout">
+        <!-- Colonne gauche -->
+        <div>
+            <section class="section">
+                <h2 class="section-title">Expérience professionnelle</h2>
+
+                <div class="position">
+    <div class="position-header">
+                        <div>
+                            <div class="position-title">Safran Engineering Services, Casablanca</div>
+                            <div class="position-company">Stagiaire Data Scientist – Projet de recherche en IA</div>
+                        </div>
+                        <div class="position-meta">(6 mois) Fév. 2025 – Juil. 2025</div>
+    </div>
+                    <ul>
+                        <li>Développement d'une IA générative pour automatiser la conception de pièces industrielles via un pipeline d'entraînement et de fine-tuning générant du code VBA pour CATIA.</li>
+                        <li>Conception d'un outil intelligent pour le traitement automatisé des dérogations et la génération de fiches justificatives des pièces KIT Engine.</li>
+                        <li>Mise en œuvre de solutions basées sur LLM, NLP, RAG et techniques de fine-tuning (PEFT) adaptées au contexte industriel.</li>
+                        <li>Développement d’interfaces et d’outils métiers avec PyQt6, couplés à l’automatisation de processus via PyAutoGUI.</li>
+    </ul>
+                </div>
+
+                <div class="position">
+    <div class="position-header">
+                        <div>
+                            <div class="position-title">ENSA, Oujda</div>
+                            <div class="position-company">Stagiaire – Optimisation &amp; Data Science</div>
+                            
+                        </div>
+                        <div class="position-meta">(6 mois) Fév. 2024 – Juil. 2024</div>
+                    </div>
+                    <ul>
+                        <li>Étude, implémentation et évaluation d'algorithmes d'optimisation (AG, Recuit simulé, PSO) appliqués à différents problèmes complexes.</li>
+                        <li>Application aux réseaux de neurones artificiels (ANN), au problème du voyageur de commerce (TSP) et au problème du sac à dos.</li>
+                        <li>Prétraitement et analyse de données : nettoyage, normalisation, standardisation et visualisation avancée.</li>
+                        <li>Utilisation d'outils et de bibliothèques Python pour l'expérimentation, la comparaison de performances et l'analyse des résultats.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Projets académiques</h2>
+
+                <div class="position">
+                    <div class="position-title">Tableau de bord d’analyse en temps réel</div>
+                    <div class="position-company">Analyse de flux de données avec Apache Spark &amp; Kafka</div>
+                    <ul>
+                        <li>Conception d'un tableau de bord d'analyse en temps réel basé sur des flux Kafka et un traitement distribué avec Apache Spark / PySpark pour le monitoring de données séquentielles.</li>
+                        <li>Amélioration de la qualité des données séquentielles grâce à des techniques de deep learning pour l'analyse et la correction automatique des anomalies.</li>
+                        <li>Intégration de visualisations interactives (Power BI, Dash) pour le suivi des indicateurs
+                            clés et l’aide à la décision.</li>
+                    </ul>
+                    <div class="tag-block">
+                        <span class="tag">Apache Kafka</span>
+                        <span class="tag">Apache Spark</span>
+                        <span class="tag">PySpark</span>
+                        <span class="tag">Big Data</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Dash</span>
+                    </div>
+                </div>
+
+                <div class="position">
+                    <div class="position-title">Détection de Wake Word &amp; reconnaissance de caractères</div>
+                    <div class="position-company">Deep Learning &amp; Edge AI</div>
+                    <ul>
+                        <li>Développement d'un système de détection de Wake Word en utilisant des réseaux de neurones convolutifs (CNN) et TensorFlow Lite </li>
+                        <li>Création d'un réseau de neurones pour la reconnaissance d'images de caractères avec un nombre variable de couches cachées et un nombre fixe de neurones.</li>
+                    </ul>
+                    <div class="tag-block">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow Lite</span>
+                        <span class="tag">Librosa</span>
+                        <span class="tag">Keras</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">React</span>
+                    </div>
+                </div>
+
+                <div class="position">
+                    <div class="position-title">Architecture microservices &amp; CI/CD</div>
+                    <div class="position-company">Cloud natif avec AWS</div>
+                    <ul>
+                        <li>Conception d’une architecture microservices scalable et résiliente déployée sur AWS.</li>
+                        <li>Mise en place d'un pipeline CI/CD automatisé avec stratégie de déploiement blue/green pour réduire les temps d'indisponibilité applicative.</li>
+                    </ul>
+                    <div class="tag-block">
+                        <span class="tag">AWS Cloud9</span>
+                        <span class="tag">Amazon ECS</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Amazon RDS</span>
+                        <span class="tag">Docker</span>
+                    </div>
+    </div>
+
+                <div class="position">
+                    <div class="position-title">Système IoT de suivi de consommation d’eau</div>
+                    <div class="position-company">Analyse de données en temps réel</div>
+                    <ul>
+                        <li>Développement d'un système IoT de suivi de consommation d'eau avec collecte et analyse de données en temps réel.</li>
+                        <li>Intégration de capteurs et microcontrôleurs pour la mesure et la transmission des données vers une plateforme cloud.</li>
+    </ul>
+                    <div class="tag-block">
+                        <span class="tag">Firebase</span>
+                        <span class="tag">ESP32</span>
+                        <span class="tag">Capteur HX711</span>
+                        <span class="tag">MPU6050</span>
+                        <span class="tag">Arduino IDE</span>
+                        <span class="tag">Flask</span>
+                    </div>
+                </div>
+</section>
+
+            <section class="section">
+                <h2 class="section-title">Formation</h2>
+
+                <div class="edu-item">
+                    <div class="edu-title">Formation en Administration des Bases de Données</div>
+                    <div class="edu-meta">ENSIAS Rabat | En cours</div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-title">Ingénieure d’État – Data Science &amp; Cloud Computing</div>
+                    <div class="edu-meta">ENSA, Université Mohammed Premier Oujda | 2023 – 2025</div>
+                </div>
+
+
+                <div class="edu-item">
+                    <div class="edu-title">Licence en Mathématiques et Informatique</div>
+                    <div class="edu-meta">Faculté des Sciences, Université Mohammed Premier Oujda | 2020 – 2023</div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="edu-title">Baccalauréat en Sciences Mathématiques</div>
+                    <div class="edu-meta">Lycée El Mariniyen, Taourirt | 2020</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Colonne droite -->
+        <div>
+            <section class="section">
+                <h2 class="section-title">Compétences clés</h2>
+                <div class="right-section-text"><strong>Systèmes d’exploitation</strong></div>
+                <div class="tag-block">
+                    <span class="tag">Windows</span>
+                    <span class="tag">Unix / Linux</span>
+                </div>
+
+                <div class="right-section-text"><strong>Langages &amp; développement</strong></div>
+                <div class="tag-block">
+                    <span class="tag">Python</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">C</span>
+                    <span class="tag">R</span>
+                    <span class="tag">JEE</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML / CSS</span>
+                    <span class="tag">React</span>
+
+                </div>
+
+                <div class="right-section-text"><strong>Data Science, ML &amp; Deep Learning</strong></div>
+                <div class="tag-block">
+                    <span class="tag">TensorFlow</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Keras</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Matplotlib</span>
+                    <span class="tag">IA générative</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">ANN</span>
+                    <span class="tag">CNN</span>
+                    <span class="tag">RNN / LSTM / GRU</span>
+                </div>
+
+                <div class="right-section-text"><strong>Big Data &amp; Business Intelligence</strong></div>
+                <div class="tag-block">
+                    <span class="tag">Hadoop</span>
+                    <span class="tag">Kafka</span>
+                    <span class="tag">Spark</span>
+                    <span class="tag">Scala</span>
+                    <span class="tag">DataWarehousing</span>
+                    <span class="tag">Data Visualization</span>
+                    <span class="tag">Power BI</span>
+                </div>
+
+                <div class="right-section-text"><strong>Bases de données</strong></div>
+                <div class="tag-block">
+                    <span class="tag">MySQL</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Oracle</span>
+                    <span class="tag">Cassandra</span>
+                    <span class="tag">MongoDB</span>
+                </div>
+
+                <div class="right-section-text"><strong>Cloud, Web &amp; API</strong></div>
+                <div class="tag-block">
+                    <span class="tag">Docker</span>
+                    <span class="tag">AWS</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">Streamlit</span>
+                    <span class="tag">Gradio</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Compétences transversales</h2>
+                <ul class="certifications">
+                    <li>Esprit d’analyse et de résolution de problèmes.</li>
+                    <li>Sens de l’organisation et gestion des priorités.</li>
+                    <li>Travail en équipe et communication claire.</li>
+                    <li>Capacité d’apprentissage rapide de nouvelles technologies.</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Langues</h2>
+                <div class="languages-table">
+                    <div class="language-row">
+                        <span class="language-name">Français</span>
+                        <span class="language-level">Courant</span>
+                    </div>
+                    <div class="language-row">
+                        <span class="language-name">Anglais</span>
+                        <span class="language-level">Intermédiaire</span>
+                    </div>
+                    <div class="language-row">
+                        <span class="language-name">Arabe</span>
+                        <span class="language-level">Natif</span>
+                    </div>
+                </div>
+</section>
+
+            <section class="section">
+                <h2 class="section-title">Certificats</h2>
+                <ul class="certifications">
+                    <li>Git et GitHub – 365 Data Science</li>
+                    <li>Power BI Foundations – Microsoft / Simplilearn</li>
+                    <li>Cloud Computing – IBM / Coursera</li>
+                    <li>Machine Learning – UCI / Coursera</li>
+                </ul>
+</section>
+
+            <section class="section">
+                <h2 class="section-title">Affiliations professionnelles</h2>
+                <ul class="affiliation">
+                    <li>
+                        <strong>Responsable Cellule Média</strong><br>
+                        Club Data Science &amp; Cloud Computing, ENSA Oujda (2023 – 2025)
+                    </li>
+
+                    <li>
+                        Participation à la Journée du Club DSCC
+                    </li>
+                    <li>
+                        Participation au Festival de Science (MDSO)
+                    </li>
+
+                </ul>
+</section>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
